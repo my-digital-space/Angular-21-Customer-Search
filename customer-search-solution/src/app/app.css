@@ -1,0 +1,122 @@
+/* Root container centers everything */
+.app-root {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(180deg, #f7f9fb 0%, #ffffff 100%);
+    padding: 32px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    box-sizing: border-box;
+}
+
+/* Card with subtle shadow and rounded corners */
+.card {
+    width: 100%;
+    max-width: 920px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(18, 38, 63, 0.08);
+    padding: 28px;
+    text-align: center;
+}
+
+/* Title */
+.app-title {
+    margin: 0 0 18px 0;
+    font-size: 28px;
+    color: #102a43;
+    letter-spacing: 0.2px;
+}
+
+/* Search area */
+.search-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.search-wrap input {
+    width: 100%;
+    max-width: 640px;
+    padding: 12px 16px;
+    border-radius: 10px;
+    border: 1px solid rgba(16, 42, 67, 0.12);
+    font-size: 15px;
+    outline: none;
+    transition: box-shadow 150ms ease, border-color 150ms ease;
+    box-sizing: border-box;
+}
+
+.search-wrap input:focus {
+    box-shadow: 0 6px 18px rgba(16, 42, 67, 0.06);
+    border-color: rgba(16, 42, 67, 0.22);
+}
+
+/* small hint text */
+.hint {
+    font-size: 12px;
+    color: #6b7c93;
+}
+
+/* Table wrapper to allow horizontal scroll on small screens */
+.table-wrap {
+    overflow-x: auto;
+    margin-top: 8px;
+}
+
+/* Table styling */
+.customer-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+    font-size: 14px;
+    color: #12263a;
+}
+
+.customer-table thead th {
+    text-align: left;
+    font-weight: 600;
+    padding: 12px 12px;
+    background: linear-gradient(180deg, rgba(16, 42, 67, 0.02), transparent);
+    border-bottom: 1px solid rgba(16, 42, 67, 0.06);
+    position: sticky;
+    top: 0;
+}
+
+.customer-table tbody td {
+    padding: 12px;
+    border-bottom: 1px solid rgba(16, 42, 67, 0.04);
+}
+
+/* hover row */
+.customer-table tbody tr:hover {
+    background: rgba(9, 30, 66, 0.03);
+}
+
+/* empty state */
+.no-results {
+    text-align: center;
+    padding: 18px;
+    color: #475569;
+    font-weight: 500;
+}
+
+/* responsive tweaks */
+@media (max-width: 560px) {
+    .app-title {
+        font-size: 20px;
+    }
+
+    .search-wrap input {
+        padding: 10px;
+    }
+
+    .customer-table thead th,
+    .customer-table tbody td {
+        padding: 10px 8px;
+        font-size: 13px;
+    }
+}

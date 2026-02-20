@@ -1,1 +1,42 @@
-<div>Hello World!</div>
+<div class="app-root">
+
+    <div class="card">
+        <h1 class="app-title">{{ title }}</h1>
+
+        <div class="search-wrap">
+            <input type="text" placeholder="Search customers (name, id, gender, location, income, age)..."
+                [(ngModel)]="searchText" (input)="onSearch()" aria-label="Search customers" />
+            <div class="hint">Type to search — clear to show all</div>
+        </div>
+
+        <div class="table-wrap">
+            <table class="customer-table" role="table" aria-label="Customer list">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Gender</th>
+                        <th>Location</th>
+                        <th>Income</th>
+                        <th>Age</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let customer of filteredCustomers; trackBy: trackById" [attr.data-id]="customer.id">
+                        <td>{{ customer.id }}</td>
+                        <td>{{ customer.name }}</td>
+                        <td>{{ customer.gender }}</td>
+                        <td>{{ customer.location }}</td>
+                        <td>{{ customer.income }}</td>
+                        <td>{{ customer.age }}</td>
+                    </tr>
+
+                    <tr *ngIf="filteredCustomers.length === 0">
+                        <td colspan="6" class="no-results">No customers found</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
