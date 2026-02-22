@@ -1,0 +1,27 @@
+.mainDiv {
+    border: 1px solid black;
+    width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.inputDiv {
+    margin: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+th,
+td {
+    border: 1px solid #333;
+    padding: 8px;
+}
+
+th {
+    background-color: #f2f2f2;
+}

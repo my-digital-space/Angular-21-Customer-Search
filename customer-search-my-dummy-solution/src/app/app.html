@@ -1,1 +1,50 @@
-<div>Hello World!</div>
+<div class="mainDiv">
+    <div>Customer Search</div>
+
+    <div class="inputDiv">
+        <!-- <input type="text" placeholder="Search here..." 
+            [(ngModel)]="inputText"
+            (input)="inputTextChanged1($event)"
+        > -->
+
+        <input type="text" placeholder="Search here..." [(ngModel)]="inputText"
+            (ngModelChange)="inputTextChanged($event)">
+    </div>
+
+    <div>
+        <table>
+            <thead>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Gender</th>
+                <th>Location</th>
+                <th>Income</th>
+                <th>Age</th>
+            </thead>
+            <tbody>
+                <!-- <tr> -->
+                <!-- <tr *ngFor="let customer of customerList; trackBy: trackByCustomerId">
+                    <td>{{customer.id}}</td>
+                    <td>{{customer.name}}</td>
+                    <td>{{customer.gender}}</td>
+                    <td>{{customer.location}}</td>
+                    <td>{{customer.income}}</td>
+                    <td>{{customer.age}}</td>
+                </tr> -->
+
+                @for (customer of filteredCustomers; track customer.id) {
+                    <tr>
+                        <td>{{customer.id}}</td>
+                        <td>{{customer.name}}</td>
+                        <td>{{customer.gender}}</td>
+                        <td>{{customer.location}}</td>
+                        <td>{{customer.income}}</td>
+                        <td>{{customer.age}}</td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+
+</div>
